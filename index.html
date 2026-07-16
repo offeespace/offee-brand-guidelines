@@ -14,12 +14,18 @@
       --cream: #E7DCC6;
       --brown: #7B5E3C;
       --green: #4D5A43;
-      --gray: #8B8B8B;
+      --gray: #6A6A6A; /* Darker gray for light theme readability */
       --gold: #C9A96E;
-      --surface: #242424;
-      --surface2: #2E2E2E;
-      --border: rgba(231, 220, 198, 0.12);
-      --border-strong: rgba(231, 220, 198, 0.25);
+      
+      /* Light theme layout variables */
+      --bg-primary: #F9F7F2;     /* Warm Ivory background */
+      --text-primary: #1A1A1A;   /* Near Black body text */
+      --text-muted: #555555;     /* Dark gray muted text */
+      --surface: #FFFFFF;        /* Pure white cards */
+      --surface2: #F2ECE4;       /* Slightly darker cream accent surface */
+      --border: rgba(77, 90, 67, 0.12); /* Translucent Green border */
+      --border-strong: rgba(77, 90, 67, 0.25); /* Translucent Green border strong */
+      
       --font-display: 'Sora', sans-serif;
       --font-body: 'Poppins', sans-serif;
 
@@ -45,8 +51,8 @@
     }
 
     body {
-      background: var(--black);
-      color: var(--cream);
+      background: var(--bg-primary);
+      color: var(--text-primary);
       font-family: var(--font-body);
       font-size: 15px;
       line-height: 1.75;
@@ -61,7 +67,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      background: rgba(26, 26, 26, 0.96);
+      background: rgba(249, 247, 242, 0.96);
       backdrop-filter: blur(20px);
       border-right: 1px solid var(--border);
       padding: 40px 24px;
@@ -109,7 +115,7 @@
       color: var(--gray);
       text-decoration: none;
       padding: 8px 14px;
-      border-radius: 4px;
+      border-radius: 8px;
       transition: all 0.2s ease;
       display: flex;
       align-items: center;
@@ -117,11 +123,17 @@
       border: 1px solid transparent;
     }
 
-    .nav-menu a:hover,
-    .nav-menu a.active {
-      color: var(--cream);
-      background: rgba(231, 220, 198, 0.05);
+    .nav-menu a:hover {
+      color: var(--green);
+      background: rgba(77, 90, 67, 0.05);
       border-color: var(--border);
+    }
+
+    .nav-menu a.active {
+      color: #FFFFFF;
+      background: var(--green);
+      border-color: var(--green);
+      font-weight: 600;
     }
 
     .nav-footer {
@@ -146,9 +158,9 @@
     /* Hero Section */
     .hero-banner {
       position: relative;
-      background: linear-gradient(135deg, rgba(123, 94, 60, 0.15) 0%, rgba(26, 26, 26, 0) 100%);
+      background: linear-gradient(135deg, rgba(77, 90, 67, 0.08) 0%, rgba(249, 247, 242, 0.2) 100%);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 24px;
       padding: 50px 40px;
       margin-bottom: 50px;
       overflow: hidden;
@@ -170,7 +182,7 @@
       font-weight: 600;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--green);
       margin-bottom: 12px;
     }
 
@@ -179,14 +191,14 @@
       font-size: clamp(28px, 4vw, 42px);
       font-weight: 700;
       line-height: 1.15;
-      color: var(--cream);
+      color: var(--green);
       margin-bottom: 12px;
       letter-spacing: 0.05em;
     }
 
     .hero-banner p {
       font-size: 14px;
-      color: var(--gray);
+      color: var(--text-muted);
       max-width: 720px;
       line-height: 1.8;
     }
@@ -211,7 +223,7 @@
       font-family: var(--font-display);
       font-size: 24px;
       font-weight: 600;
-      color: var(--cream);
+      color: var(--green);
       letter-spacing: 0.05em;
       display: flex;
       align-items: center;
@@ -227,7 +239,7 @@
 
     .section-desc {
       font-size: 13px;
-      color: var(--gray);
+      color: var(--text-muted);
       margin-top: 10px;
       max-width: 800px;
     }
@@ -249,21 +261,21 @@
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 20px;
       padding: 24px;
       position: relative;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .card:hover {
-      border-color: rgba(201, 169, 110, 0.3);
+      border-color: rgba(77, 90, 67, 0.3);
       transform: translateY(-2px);
     }
 
     /* Mockup visual containers */
     .mockup-container {
       margin-bottom: 24px;
-      border-radius: 8px;
+      border-radius: 24px;
       overflow: hidden;
       border: 1px solid var(--border);
       background: #111;
@@ -286,7 +298,7 @@
       background: var(--surface2);
       border-top: 1px solid var(--border);
       font-size: 12px;
-      color: var(--cream);
+      color: var(--text-primary);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -309,9 +321,9 @@
     }
 
     .logo-container-card {
-      background: #1e1e1e;
+      background: #FFFFFF;
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 20px;
       padding: 30px 20px;
       display: flex;
       flex-direction: column;
@@ -353,7 +365,7 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      color: var(--cream);
+      color: var(--text-primary);
       margin-top: 6px;
     }
 
@@ -361,10 +373,14 @@
       width: 100%;
       text-align: center;
       font-size: 10px;
-      color: var(--gray);
+      color: var(--text-muted);
       border-top: 1px solid var(--border);
       padding-top: 10px;
       margin-top: 6px;
+    }
+
+    .logo-container-card[style] .logo-spec {
+      color: rgba(255, 255, 255, 0.6);
     }
 
     /* Color Swatches and Gradients */
@@ -377,7 +393,7 @@
     .color-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 20px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -395,7 +411,7 @@
       background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(8px);
       padding: 4px 10px;
-      border-radius: 3px;
+      border-radius: 8px;
       font-size: 9px;
       letter-spacing: 0.1em;
       color: #fff;
@@ -416,14 +432,14 @@
       font-family: var(--font-display);
       font-size: 14px;
       font-weight: 600;
-      color: var(--cream);
+      color: var(--text-primary);
       margin-bottom: 2px;
     }
 
     .color-hex {
       font-family: var(--font-display);
       font-size: 12px;
-      color: var(--gold);
+      color: var(--green);
       font-weight: 600;
       margin-bottom: 10px;
     }
@@ -432,24 +448,24 @@
       display: flex;
       justify-content: space-between;
       font-size: 10px;
-      color: var(--gray);
+      color: var(--text-muted);
       margin-bottom: 4px;
     }
 
     .color-code-row span:last-child {
       font-family: monospace;
-      color: var(--cream);
+      color: var(--text-primary);
     }
 
     .gradient-css-box {
-      background: rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(231, 220, 198, 0.05);
-      border-radius: 4px;
+      background: rgba(77, 90, 67, 0.03);
+      border: 1px solid rgba(77, 90, 67, 0.08);
+      border-radius: 8px;
       padding: 6px 10px;
       margin-top: 10px;
       font-size: 10px;
       font-family: monospace;
-      color: var(--gray);
+      color: var(--text-primary);
       white-space: nowrap;
       overflow-x: auto;
     }
@@ -458,7 +474,7 @@
     .sound-level-card {
       background: var(--surface2);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 20px;
       padding: 20px;
       text-align: center;
     }
@@ -467,7 +483,7 @@
       font-family: var(--font-display);
       font-size: 32px;
       font-weight: 700;
-      color: var(--gold);
+      color: var(--green);
       margin-bottom: 6px;
     }
 
@@ -475,7 +491,7 @@
       font-size: 11px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--cream);
+      color: var(--text-primary);
       margin-bottom: 8px;
     }
 
@@ -494,12 +510,12 @@
       font-family: var(--font-display);
       font-size: 15px;
       font-weight: 600;
-      color: var(--cream);
+      color: var(--green);
     }
 
     .interior-desc {
       font-size: 12px;
-      color: var(--gray);
+      color: var(--text-muted);
       line-height: 1.7;
     }
 
@@ -526,13 +542,13 @@
       font-family: var(--font-display);
       font-size: 14px;
       font-weight: 600;
-      color: var(--cream);
+      color: var(--green);
       margin-bottom: 4px;
     }
 
     .zone-info p {
       font-size: 12px;
-      color: var(--gray);
+      color: var(--text-muted);
     }
 
     .zone-meta {
@@ -543,45 +559,41 @@
       font-family: var(--font-display);
       font-size: 16px;
       font-weight: 700;
-      color: var(--gold);
+      color: var(--green);
     }
 
     .zone-lbl {
       font-size: 9px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--gray);
+      color: var(--text-muted);
     }
 
     /* UI Patterns Code Demo */
     .ui-pattern-card {
       background: var(--surface2);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 20px;
       padding: 20px;
     }
 
     .ui-glass-preview {
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.50);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(231, 220, 198, 0.12);
-      border-radius: 4px;
+      border: 1px solid rgba(77, 90, 67, 0.15);
+      border-radius: 16px;
       padding: 24px;
-      text-align: center;
-      margin-bottom: 14px;
-    }
-
     .ui-glass-btn {
-      background: var(--gold);
+      background: var(--green);
       border: none;
-      color: var(--black);
+      color: #FFFFFF;
       padding: 8px 18px;
       font-family: var(--font-display);
       font-weight: 600;
       font-size: 10px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      border-radius: 3px;
+      border-radius: 999px;
       cursor: pointer;
       transition: opacity 0.2s;
     }
@@ -594,7 +606,7 @@
     .type-demo {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 20px;
       padding: 30px;
       margin-bottom: 20px;
     }
@@ -604,13 +616,13 @@
       font-size: 48px;
       font-weight: 700;
       line-height: 1.1;
-      color: var(--cream);
+      color: var(--green);
       margin-bottom: 12px;
     }
 
     .type-specimen {
       font-size: 12px;
-      color: var(--gray);
+      color: var(--text-muted);
       border-top: 1px solid var(--border);
       padding-top: 12px;
       display: flex;
@@ -622,7 +634,7 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      color: var(--gold);
+      color: var(--green);
     }
 
     /* Incorrect Use / Rules */
@@ -635,7 +647,7 @@
     .rules-card {
       background: rgba(77, 90, 67, 0.05);
       border: 1px solid rgba(77, 90, 67, 0.2);
-      border-radius: 6px;
+      border-radius: 20px;
       padding: 24px;
     }
 
@@ -657,11 +669,11 @@
     }
 
     .rules-card.do .rules-title {
-      color: #7dcea0;
+      color: #27ae60;
     }
 
     .rules-card.dont .rules-title {
-      color: #e74c3c;
+      color: #c0392b;
     }
 
     .rule-item {
@@ -670,7 +682,7 @@
       align-items: flex-start;
       margin-bottom: 12px;
       font-size: 12px;
-      color: var(--gray);
+      color: var(--text-muted);
     }
 
     .rule-icon {
@@ -679,11 +691,11 @@
     }
 
     .rules-card.do .rule-icon {
-      color: #7dcea0;
+      color: #27ae60;
     }
 
     .rules-card.dont .rule-icon {
-      color: #e74c3c;
+      color: #c0392b;
     }
 
     /* Copywriting / Voice Section */
@@ -695,9 +707,9 @@
 
     .voice-box {
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 20px;
       padding: 20px;
-      background: rgba(26, 26, 26, 0.4);
+      background: rgba(255, 255, 255, 0.6);
     }
 
     .voice-header {
@@ -706,14 +718,14 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       margin-bottom: 10px;
-      color: var(--gold);
+      color: var(--green);
     }
 
     .voice-text {
       font-style: italic;
       font-size: 13px;
       line-height: 1.6;
-      color: var(--cream);
+      color: var(--text-primary);
     }
 
     /* Mobile Responsive Styles */
@@ -777,7 +789,7 @@
   <!-- Sidebar Navigation -->
   <aside>
     <div class="brand-logo-container">
-      <img src="logo-word-light.png" alt="OFFEE LOGO">
+      <img src="logo-word-dark.png" alt="OFFEE LOGO">
     </div>
     <div class="nav-menu">
       <a href="#philosophy" class="active">Philosophy</a>
@@ -786,7 +798,7 @@
       <a href="#typography">Typography</a>
       <a href="#serveware">F&B Serveware</a>
       <a href="#soundscaping">Soundscaping</a>
-      <a href="#digital">Digital UI Systems</a>
+      <a href="#digital">Glassmorphic Systems</a>
       <a href="#attire">Staff Attire</a>
       <a href="#storefront">Storefront Spec</a>
       <a href="#demarcation">Track B Demarcation</a>
@@ -1031,7 +1043,7 @@
 
       <div class="type-demo">
         <div class="type-title-large">Sora Display Bold</div>
-        <p style="font-family:'Sora', sans-serif; font-size: 18px; color: var(--cream); margin-bottom: 16px;">THE THIRD
+        <p style="font-family:'Sora', sans-serif; font-size: 18px; color: var(--green); margin-bottom: 16px;">THE THIRD
           PLACE FOR MODERN PROFESSIONALS</p>
         <div class="type-specimen">
           <span>Primary Display Face</span>
@@ -1039,9 +1051,9 @@
         </div>
       </div>
 
-      <div class="type-demo" style="background:rgba(231, 220, 198, 0.02);">
+      <div class="type-demo" style="background:rgba(77, 90, 67, 0.03);">
         <p
-          style="font-family:'Poppins', sans-serif; font-size: 20px; font-weight:300; color: var(--cream); margin-bottom: 10px; line-height: 1.4;">
+          style="font-family:'Poppins', sans-serif; font-size: 20px; font-weight:300; color: var(--text-primary); margin-bottom: 10px; line-height: 1.4;">
           Poppins Sans Body</p>
         <p
           style="font-family:'Poppins', sans-serif; font-size: 13px; color: var(--gray); max-width: 800px; line-height: 1.8;">
@@ -1130,54 +1142,65 @@
           highly atmospheric layers to prevent semantic distraction.
         </p>
         <ul style="font-size:12px; color:var(--gray); line-height:1.8; padding-left: 20px;">
-          <li><strong style="color:var(--cream);">Morning (09:00 - 12:00):</strong> Soft ambient piano, fingerstyle
+          <li><strong style="color:var(--green);">Morning (09:00 - 12:00):</strong> Soft ambient piano, fingerstyle
             acoustic guitar, minimalist organic loops.</li>
-          <li><strong style="color:var(--cream);">Afternoon (12:00 - 17:00):</strong> Low-frequency warm lo-fi beats,
+          <li><strong style="color:var(--green);">Afternoon (12:00 - 17:00):</strong> Low-frequency warm lo-fi beats,
             ambient coffee-house hum, cozy chillhop loops.</li>
-          <li><strong style="color:var(--cream);">Evening (17:00 - 21:00):</strong> Cozy soft jazz, elegant bossa nova
+          <li><strong style="color:var(--green);">Evening (17:00 - 21:00):</strong> Cozy soft jazz, elegant bossa nova
             chords, warm visual lounge ambient tracks.</li>
         </ul>
       </div>
     </section>
 
-    <!-- Digital UI Systems (NEW) -->
+    <!-- Digital UI & Marketing Glassmorphism (NEW) -->
     <section id="digital">
       <div class="section-header">
-        <div class="eyebrow">07 — DIGITAL INTERACTION SYSTEM</div>
+        <div class="eyebrow">07 — GLASSMORPHIC SYSTEMS</div>
         <h2 class="section-title">The Glassmorphic Gateway</h2>
-        <p class="section-desc">Our digital assets on <code>offee.space</code> mirror the warm glass and wood textures
-          of our physical spaces. Buttons and cards utilize frosted-glass properties to remain premium.</p>
+        <p class="section-desc">Our brand assets mirror the warm glass and wood textures of our physical spaces. Frosted-glass properties are utilized across web interfaces, poster designs, and marketing collateral. However, glassmorphism must be used with restraint—acting as a quiet framing element only where hierarchy and readability demand it, rather than overloading the visual field.</p>
       </div>
 
-      <div class="grid-2">
+      <div class="grid-3">
         <!-- Glassmorphism card -->
         <div class="ui-pattern-card">
-          <div class="eyebrow">Interactive Pattern</div>
+          <div class="eyebrow">Interactive UI Pattern</div>
           <div class="ui-glass-preview">
-            <h4 style="font-family:var(--font-display); font-size:14px; margin-bottom:8px; color:var(--cream);">Focus
-              Day-Pass</h4>
+            <h4 style="font-family:var(--font-display); font-size:14px; margin-bottom:8px; color:var(--text-primary);">Focus Day-Pass</h4>
             <p style="font-size:11px; color:var(--gray); margin-bottom:14px;">Unlimited space access + welcome chai</p>
             <button class="ui-glass-btn">Check In Now</button>
           </div>
           <div style="font-size:11px; color:var(--gray); line-height:1.6;">
             <strong>CSS Specs:</strong><br>
-            <code>background: rgba(255, 255, 255, 0.03);</code><br>
-            <code>backdrop-filter: blur(12px);</code>
+            <code>background: rgba(255, 255, 255, 0.50);</code><br>
+            <code>backdrop-filter: blur(12px);</code><br>
+            <code>border: 1px solid rgba(77, 90, 67, 0.15);</code>
           </div>
+        </div>
+
+        <!-- Marketing & Poster Design -->
+        <div class="card">
+          <div class="eyebrow" style="color:var(--gold); margin-bottom:12px;">Poster & Collateral Rules</div>
+          <h3 class="interior-title" style="margin-bottom:12px;">Marketing Restraint</h3>
+          <p style="font-size:12px; color:var(--gray); line-height:1.7; margin-bottom:12px;">
+            Glass overlays act as high-contrast backing plates to keep typography legible over background imagery in physical posters, social cards, and banners.
+          </p>
+          <ul style="font-size:11px; color:var(--gray); line-height:1.6; padding-left:16px;">
+            <li><strong style="color:var(--green);">Intentional Framing:</strong> Only apply glass panels behind copy that conflicts with background graphics. Do not use glass panels purely as background decor.</li>
+            <li><strong style="color:var(--green);">No Over-Stacking:</strong> Never stack glass layers on top of each other. A single frosted layer is our absolute visual limit.</li>
+            <li><strong style="color:var(--green);">Contrast First:</strong> Keep text sharp. Rely on font weight and generous padding instead of drop shadows on text inside glass panels.</li>
+          </ul>
         </div>
 
         <!-- WhatsApp and Checkout styling -->
         <div class="card">
-          <h3 class="interior-title" style="margin-bottom:12px;">Transaction Etiquette</h3>
+          <div class="eyebrow" style="color:var(--gold); margin-bottom:12px;">Digital Etiquette</div>
+          <h3 class="interior-title" style="margin-bottom:12px;">Transaction Flow</h3>
           <p style="font-size:12px; color:var(--gray); line-height:1.7; margin-bottom:12px;">
-            For ease of onboarding, we avoid complex custom mobile applications. All check-ins and payments are driven
-            through a clean WhatsApp Razorpay integration.
+            For ease of onboarding, we avoid complex custom mobile applications. All check-ins and payments are driven through a clean WhatsApp Razorpay integration.
           </p>
-          <div
-            style="background:rgba(0,0,0,0.15); padding:12px; border-radius:4px; border-left: 3px solid var(--gold); font-size:11px; font-family:monospace; color:var(--gray);">
+          <div style="background:rgba(0,0,0,0.15); padding:12px; border-radius:8px; border-left: 3px solid var(--gold); font-size:11px; font-family:monospace; color:var(--gray);">
             <span style="color:var(--gold);">WhatsApp Template:</span><br>
-            "Welcome to focus, {name}. Your access pass for today has been checked in successfully at Perinthalmanna.
-            Show this ticket to receive your hot brew."
+            "Welcome to focus, {name}. Your access pass has been checked in successfully at Perinthalmanna. Show this ticket to receive your hot brew."
           </div>
         </div>
       </div>
@@ -1223,7 +1246,7 @@
 
       <div class="grid-3">
         <div class="card">
-          <h4 style="font-family:var(--font-display); font-size:14px; color:var(--cream); margin-bottom:8px;">Brushed
+          <h4 style="font-family:var(--font-display); font-size:14px; color:var(--green); margin-bottom:8px;">Brushed
             Brass Signage</h4>
           <p style="font-size:11px; color:var(--gray); line-height:1.7;">
             The primary street sign is cut from heavy, solid brushed brass plate, back-lit with extremely warm halo LED
@@ -1231,7 +1254,7 @@
           </p>
         </div>
         <div class="card">
-          <h4 style="font-family:var(--font-display); font-size:14px; color:var(--cream); margin-bottom:8px;">Storefront
+          <h4 style="font-family:var(--font-display); font-size:14px; color:var(--green); margin-bottom:8px;">Storefront
             transparency</h4>
           <p style="font-size:11px; color:var(--gray); line-height:1.7;">
             Large scale window panes must remain transparent to let passersby feel the warm wood interior. Frosting
@@ -1239,7 +1262,7 @@
           </p>
         </div>
         <div class="card">
-          <h4 style="font-family:var(--font-display); font-size:14px; color:var(--cream); margin-bottom:8px;">Materials
+          <h4 style="font-family:var(--font-display); font-size:14px; color:var(--green); margin-bottom:8px;">Materials
             & Facades</h4>
           <p style="font-size:11px; color:var(--gray); line-height:1.7;">
             Exterior walls are finished with rough, textured charcoal stucco or warm red brickwork. This structural
@@ -1268,7 +1291,7 @@
 
       <div class="grid-3">
         <div class="card">
-          <h4 style="font-family:var(--font-display); font-size:14px; color:var(--cream); margin-bottom:8px;">Brass
+          <h4 style="font-family:var(--font-display); font-size:14px; color:var(--green); margin-bottom:8px;">Brass
             Inlaid Separations</h4>
           <p style="font-size:11px; color:var(--gray); line-height:1.7;">
             Track B zones are visually framed using thin, brushed brass bars inlaid flush into the floorboards or
@@ -1276,7 +1299,7 @@
           </p>
         </div>
         <div class="card">
-          <h4 style="font-family:var(--font-display); font-size:14px; color:var(--cream); margin-bottom:8px;">Felt Desk
+          <h4 style="font-family:var(--font-display); font-size:14px; color:var(--green); margin-bottom:8px;">Felt Desk
             Liners</h4>
           <p style="font-size:11px; color:var(--gray); line-height:1.7;">
             To soften acoustic reflections and partition work areas, every focus desk in a partner café features a
@@ -1284,7 +1307,7 @@
           </p>
         </div>
         <div class="card">
-          <h4 style="font-family:var(--font-display); font-size:14px; color:var(--cream); margin-bottom:8px;">Leather
+          <h4 style="font-family:var(--font-display); font-size:14px; color:var(--green); margin-bottom:8px;">Leather
             Seating Tags</h4>
           <p style="font-size:11px; color:var(--gray); line-height:1.7;">
             We place elegant, thick brown leather labels stamped with 'OFFEE Priority Focus Seat' over chair backs to
