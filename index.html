@@ -583,6 +583,8 @@
       border: 1px solid rgba(77, 90, 67, 0.15);
       border-radius: 16px;
       padding: 24px;
+    }
+
     .ui-glass-btn {
       background: var(--green);
       border: none;
@@ -728,6 +730,263 @@
       color: var(--text-primary);
     }
 
+    /* ── Section 15: Character System ───────────────────────────── */
+
+    .collective-intro {
+      background: linear-gradient(135deg, rgba(77,90,67,0.06) 0%, rgba(201,169,110,0.06) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .collective-intro::before {
+      content: '';
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+      top: -80px;
+      right: -60px;
+      pointer-events: none;
+    }
+
+    .collective-intro p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      max-width: 820px;
+    }
+
+    .collective-intro p + p {
+      margin-top: 10px;
+    }
+
+    /* Character cards grid */
+    .character-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .character-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .character-card:hover {
+      border-color: rgba(77,90,67,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(77,90,67,0.08);
+    }
+
+    .character-img-wrap {
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      height: 280px;
+      position: relative;
+    }
+
+    .character-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.5s ease;
+    }
+
+    .character-card:hover .character-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .character-type-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(249,247,242,0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-strong);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 9px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .character-info {
+      padding: 20px;
+    }
+
+    .character-role {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .character-tagline {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .character-accessories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .acc-tag {
+      font-size: 10px;
+      font-family: var(--font-display);
+      letter-spacing: 0.05em;
+      color: var(--green);
+      background: rgba(77,90,67,0.07);
+      border: 1px solid rgba(77,90,67,0.15);
+      border-radius: 6px;
+      padding: 3px 9px;
+    }
+
+    /* Design spec rows */
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .spec-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .spec-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .spec-table td {
+      padding: 12px 8px;
+      font-size: 12px;
+      vertical-align: top;
+    }
+
+    .spec-table td:first-child {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--green);
+      width: 180px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .spec-table td:last-child {
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Palette swatches inline */
+    .palette-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .palette-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 6px 12px 6px 8px;
+      font-size: 10px;
+      font-family: var(--font-display);
+      color: var(--text-muted);
+    }
+
+    .palette-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    /* Category group blocks */
+    .category-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .category-group-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .category-pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .category-pill {
+      font-size: 11px;
+      color: var(--text-primary);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-family: var(--font-body);
+    }
+
+    /* Guiding principle callout */
+    .principle-callout {
+      background: var(--green);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .principle-callout p {
+      font-size: 13px;
+      color: rgba(231,220,198,0.8);
+      line-height: 1.8;
+      max-width: 680px;
+      margin: 0 auto 12px;
+    }
+
+    .principle-callout strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 0.03em;
+    }
+
     /* Mobile Responsive Styles */
     @media(max-width: 992px) {
       body {
@@ -806,6 +1065,7 @@
       <a href="#layout">Layout Zones</a>
       <a href="#voice">Voice & Tone</a>
       <a href="#rules">Rules & Integrity</a>
+      <a href="#collective">Character System</a>
     </div>
     <div class="nav-footer">
       OFFEE SPACE SYSTEM &copy; 2026<br>
@@ -1504,6 +1764,402 @@
         </div>
       </div>
     </section>
+
+
+    <!-- Section 15: The OFFEE Collective — Character System -->
+    <section id="collective">
+      <div class="section-header">
+        <div class="eyebrow">15 &mdash; CHARACTER SYSTEM</div>
+        <h2 class="section-title">The OFFEE Collective</h2>
+        <p class="section-desc">A growing universe of voxel-crafted characters representing the people who power the OFFEE ecosystem. They are not mascots &mdash; they are professionals, creators, entrepreneurs, partners, and community members who embody the values of focus, craftsmanship, curiosity, hospitality, and meaningful work.</p>
+      </div>
+
+      <!-- Character Philosophy -->
+      <div class="collective-intro">
+        <div class="eyebrow" style="margin-bottom:14px;">Character Philosophy</div>
+        <p>OFFEE is built around people. Our spaces exist for founders building startups, designers creating experiences, architects shaping cities, students preparing for their future, caf&eacute; owners welcoming communities, and every professional pursuing meaningful work.</p>
+        <p>The OFFEE Collective celebrates these people. Rather than acting as traditional mascots, the characters quietly inhabit the OFFEE universe &mdash; appearing naturally across our physical spaces, digital products, marketing, and storytelling.</p>
+        <p style="margin-top:12px; font-style:italic; color:var(--green); font-weight:500;">They should always feel authentic, approachable, and aspirational.</p>
+      </div>
+
+      <!-- Character Showcase -->
+      <div class="section-header" style="margin-bottom:20px;">
+        <div class="eyebrow">Collective Members &mdash; Sample Characters</div>
+        <h3 class="section-title" style="font-size:18px;">Professionals &middot; Partners &middot; Community</h3>
+      </div>
+
+      <div class="character-grid">
+        <!-- The Founder -->
+        <div class="character-card">
+          <div class="character-img-wrap">
+            <img src="character-founder.png" alt="The Founder &mdash; OFFEE Collective Character">
+            <div class="character-type-badge">Professional</div>
+          </div>
+          <div class="character-info">
+            <div class="character-role">The Founder</div>
+            <div class="character-tagline">Building something from nothing. Chooses OFFEE for the psychological legitimacy to focus without distraction.</div>
+            <div class="character-accessories">
+              <span class="acc-tag">Ceramic Mug</span>
+              <span class="acc-tag">Laptop</span>
+              <span class="acc-tag">Notebook</span>
+              <span class="acc-tag">Canvas Backpack</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Barista -->
+        <div class="character-card">
+          <div class="character-img-wrap">
+            <img src="character-barista.png" alt="The Barista &mdash; OFFEE Collective Character">
+            <div class="character-type-badge">Partner</div>
+          </div>
+          <div class="character-info">
+            <div class="character-role">The Barista</div>
+            <div class="character-tagline">The invisible host. Crafts the welcome handshake with quiet confidence and deliberate care.</div>
+            <div class="character-accessories">
+              <span class="acc-tag">Pour-Over</span>
+              <span class="acc-tag">Canvas Apron</span>
+              <span class="acc-tag">Ceramic Vessel</span>
+              <span class="acc-tag">Brass Pin</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Designer -->
+        <div class="character-card">
+          <div class="character-img-wrap">
+            <img src="character-designer.png" alt="The Designer &mdash; OFFEE Collective Character">
+            <div class="character-type-badge">Professional</div>
+          </div>
+          <div class="character-info">
+            <div class="character-role">The Designer</div>
+            <div class="character-tagline">Shapes experiences and identities. Finds clarity of thought in OFFEE's warm, distraction-free zones.</div>
+            <div class="character-accessories">
+              <span class="acc-tag">Sketchbook</span>
+              <span class="acc-tag">Messenger Bag</span>
+              <span class="acc-tag">Fountain Pen</span>
+              <span class="acc-tag">Headphones</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Design Language -->
+      <div class="section-header" style="margin-bottom:20px; margin-top:8px;">
+        <div class="eyebrow">Design Language</div>
+        <h3 class="section-title" style="font-size:18px;">Visual System Standards</h3>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:28px;">
+        <!-- Visual Style + Rendering -->
+        <div class="card">
+          <div class="eyebrow" style="color:var(--gold); margin-bottom:14px;">Visual Style &amp; Rendering</div>
+          <p style="font-size:12px; color:var(--text-muted); line-height:1.7; margin-bottom:14px;">Premium voxel-art inspired by modern designer collectibles. Characters are built from small geometric cubes while maintaining soft silhouettes and refined proportions. The aesthetic communicates craftsmanship and intentionality.</p>
+          <div class="eyebrow" style="font-size:9px; color:var(--green); margin-bottom:10px;">Render Requirements</div>
+          <ul style="font-size:11px; color:var(--text-muted); line-height:1.8; padding-left:16px;">
+            <li>Premium photorealistic quality</li>
+            <li>Soft natural sunlight</li>
+            <li>Warm indoor lighting</li>
+            <li>Organic shadows</li>
+            <li>Cinematic depth of field</li>
+            <li>Matte materials</li>
+            <li>Natural colour grading</li>
+          </ul>
+          <p style="font-size:11px; color:var(--text-muted); margin-top:12px; font-style:italic; border-top:1px solid var(--border); padding-top:10px;">Characters should feel like premium collectible figures, never digital game assets.</p>
+        </div>
+
+        <!-- Character Proportions -->
+        <div class="card">
+          <div class="eyebrow" style="color:var(--gold); margin-bottom:14px;">Character Proportions</div>
+          <p style="font-size:12px; color:var(--text-muted); line-height:1.7; margin-bottom:14px;">All characters follow a consistent visual system. Consistency across every character is essential.</p>
+          <div class="eyebrow" style="font-size:9px; color:var(--green); margin-bottom:10px;">Proportion Rules</div>
+          <ul style="font-size:11px; color:var(--text-muted); line-height:1.8; padding-left:16px;">
+            <li>Large expressive head</li>
+            <li>Compact body</li>
+            <li>Short limbs</li>
+            <li>Simple facial features</li>
+            <li>Neutral expression</li>
+            <li>Relaxed posture</li>
+            <li>Soft rounded voxel edges</li>
+          </ul>
+        </div>
+
+        <!-- Facial Design -->
+        <div class="card">
+          <div class="eyebrow" style="color:var(--gold); margin-bottom:14px;">Facial Design</div>
+          <p style="font-size:12px; color:var(--text-muted); line-height:1.7; margin-bottom:14px;">Characters remain emotionally subtle. Expressions should communicate calm confidence rather than exaggerated emotion.</p>
+          <div class="eyebrow" style="font-size:9px; color:var(--green); margin-bottom:10px;">Face Rules</div>
+          <ul style="font-size:11px; color:var(--text-muted); line-height:1.8; padding-left:16px;">
+            <li>Eyes should be simple</li>
+            <li>Smiles should remain minimal</li>
+            <li>Emotion comes through body language and posture &mdash; not facial cues</li>
+            <li>No exaggerated expressions</li>
+            <li>No oversized or cartoonish eyes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Colour Palette + Materials/Clothing -->
+      <div class="grid-2" style="margin-bottom:28px;">
+        <!-- Colour palette card -->
+        <div class="card">
+          <div class="eyebrow" style="color:var(--gold); margin-bottom:16px;">Exclusive Colour Palette</div>
+          <p style="font-size:12px; color:var(--text-muted); margin-bottom:18px; line-height:1.7;">Characters must exclusively use the OFFEE brand palette. Accent colours should remain muted and earthy. Bright or saturated colours must never be introduced.</p>
+          <div class="palette-row">
+            <div class="palette-chip">
+              <div class="palette-dot" style="background:#4D5A43;"></div>
+              Forest Green
+            </div>
+            <div class="palette-chip">
+              <div class="palette-dot" style="background:#E7DCC6; border:1px solid var(--border);"></div>
+              Warm Cream
+            </div>
+            <div class="palette-chip">
+              <div class="palette-dot" style="background:#7B5E3C;"></div>
+              Walnut Brown
+            </div>
+            <div class="palette-chip">
+              <div class="palette-dot" style="background:#1A1A1A;"></div>
+              Near Black
+            </div>
+            <div class="palette-chip">
+              <div class="palette-dot" style="background:#C9A96E;"></div>
+              Premium Brass
+            </div>
+          </div>
+
+          <div class="eyebrow" style="color:var(--gold); margin-bottom:12px; margin-top:24px;">Accessories Vocabulary</div>
+          <div class="category-pill-list">
+            <span class="category-pill">Laptop</span>
+            <span class="category-pill">Tablet</span>
+            <span class="category-pill">Notebook</span>
+            <span class="category-pill">Sketchbook</span>
+            <span class="category-pill">Camera</span>
+            <span class="category-pill">Coffee Mug</span>
+            <span class="category-pill">Blueprint Tube</span>
+            <span class="category-pill">Books</span>
+            <span class="category-pill">Backpack</span>
+            <span class="category-pill">Messenger Bag</span>
+            <span class="category-pill">Headphones</span>
+            <span class="category-pill">Plant</span>
+            <span class="category-pill">Fountain Pen</span>
+            <span class="category-pill">Mechanical Keyboard</span>
+          </div>
+          <p style="font-size:11px; color:var(--text-muted); margin-top:10px; font-style:italic;">Each character should have a small set of signature accessories that define their personality.</p>
+        </div>
+
+        <!-- Materials + Clothing -->
+        <div class="card">
+          <div class="eyebrow" style="color:var(--gold); margin-bottom:16px;">Materials &amp; Clothing</div>
+          <p style="font-size:12px; color:var(--text-muted); margin-bottom:14px; line-height:1.7;">Clothing and accessories should feel tactile and authentic. Wardrobes reflect modern professionals, not fashion trends. Avoid glossy plastics or synthetic finishes.</p>
+
+          <div class="eyebrow" style="font-size:9px; color:var(--green); margin-bottom:10px;">Preferred Materials</div>
+          <div class="category-pill-list" style="margin-bottom:18px;">
+            <span class="category-pill">Linen</span>
+            <span class="category-pill">Cotton</span>
+            <span class="category-pill">Canvas</span>
+            <span class="category-pill">Leather</span>
+            <span class="category-pill">Wood</span>
+            <span class="category-pill">Ceramic</span>
+            <span class="category-pill">Kraft Paper</span>
+            <span class="category-pill">Wool</span>
+            <span class="category-pill">Brushed Brass</span>
+          </div>
+
+          <div class="eyebrow" style="font-size:9px; color:var(--green); margin-bottom:10px;">Clothing Preferred</div>
+          <div class="category-pill-list" style="margin-bottom:14px;">
+            <span class="category-pill">Hoodies</span>
+            <span class="category-pill">Overshirts</span>
+            <span class="category-pill">Linen Shirts</span>
+            <span class="category-pill">Knitted Sweaters</span>
+            <span class="category-pill">Relaxed Trousers</span>
+            <span class="category-pill">Chinos</span>
+            <span class="category-pill">Minimal Sneakers</span>
+            <span class="category-pill">Canvas Backpacks</span>
+            <span class="category-pill">Messenger Bags</span>
+            <span class="category-pill">Utility Jackets</span>
+          </div>
+
+          <div class="eyebrow" style="font-size:9px; color:rgba(192,57,43,0.8); margin-bottom:8px;">Clothing Avoid</div>
+          <p style="font-size:11px; color:rgba(192,57,43,0.7); font-style:italic; line-height:1.7;">Loud patterns &middot; Fashion logos &middot; Luxury branding &middot; Formal business suits &middot; Sports jerseys &middot; Bright colours</p>
+        </div>
+      </div>
+
+      <!-- Character Categories -->
+      <div class="section-header" style="margin-bottom:20px;">
+        <div class="eyebrow">Character Categories</div>
+        <h3 class="section-title" style="font-size:18px;">Three Primary Groups</h3>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:28px;">
+        <div class="category-group">
+          <div class="category-group-title">Professionals</div>
+          <p style="font-size:11px; color:var(--text-muted); margin-bottom:14px; line-height:1.6;">People who use OFFEE as a place to work, build, and create.</p>
+          <div class="category-pill-list">
+            <span class="category-pill">The Founder</span>
+            <span class="category-pill">The Designer</span>
+            <span class="category-pill">The Developer</span>
+            <span class="category-pill">The Architect</span>
+            <span class="category-pill">The Product Manager</span>
+            <span class="category-pill">The Consultant</span>
+            <span class="category-pill">The Researcher</span>
+            <span class="category-pill">The Writer</span>
+            <span class="category-pill">The Student</span>
+            <span class="category-pill">The Lawyer</span>
+            <span class="category-pill">The Accountant</span>
+            <span class="category-pill">The Photographer</span>
+            <span class="category-pill">The Doctor</span>
+            <span class="category-pill">The Professor</span>
+            <span class="category-pill">The Freelancer</span>
+          </div>
+        </div>
+
+        <div class="category-group">
+          <div class="category-group-title">Partners</div>
+          <p style="font-size:11px; color:var(--text-muted); margin-bottom:14px; line-height:1.6;">Businesses and individuals who help deliver the OFFEE experience. These characters reinforce that partners are an integral part of the ecosystem &mdash; not external vendors.</p>
+          <div class="category-pill-list">
+            <span class="category-pill">The Caf&eacute; Owner</span>
+            <span class="category-pill">The Barista</span>
+            <span class="category-pill">The Hotel Manager</span>
+            <span class="category-pill">The Coworking Host</span>
+            <span class="category-pill">The Community Manager</span>
+            <span class="category-pill">The Operations Lead</span>
+          </div>
+        </div>
+
+        <div class="category-group">
+          <div class="category-group-title">Community</div>
+          <p style="font-size:11px; color:var(--text-muted); margin-bottom:14px; line-height:1.6;">Members who represent collaboration, learning, and growth within the OFFEE ecosystem.</p>
+          <div class="category-pill-list">
+            <span class="category-pill">The Mentor</span>
+            <span class="category-pill">The Investor</span>
+            <span class="category-pill">The Speaker</span>
+            <span class="category-pill">The Recruiter</span>
+            <span class="category-pill">The Event Host</span>
+            <span class="category-pill">The Volunteer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Environment + Animation -->
+      <div class="grid-2" style="margin-bottom:28px;">
+        <div class="card">
+          <div class="eyebrow" style="color:var(--gold); margin-bottom:14px;">Environment</div>
+          <p style="font-size:12px; color:var(--text-muted); margin-bottom:14px; line-height:1.7;">Characters should naturally exist inside OFFEE spaces. Scenes should always communicate warmth, focus, and productivity.</p>
+          <div class="category-pill-list">
+            <span class="category-pill">Wooden Work Desks</span>
+            <span class="category-pill">Natural Daylight</span>
+            <span class="category-pill">Indoor Plants</span>
+            <span class="category-pill">Ceramic Coffee Mugs</span>
+            <span class="category-pill">Bookshelves</span>
+            <span class="category-pill">Architectural Interiors</span>
+            <span class="category-pill">Meeting Rooms</span>
+            <span class="category-pill">Lounge Spaces</span>
+            <span class="category-pill">Caf&eacute; Workspaces</span>
+            <span class="category-pill">Collaborative Tables</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow" style="color:var(--gold); margin-bottom:14px;">Animation Principles</div>
+          <p style="font-size:12px; color:var(--text-muted); margin-bottom:14px; line-height:1.7;">Movement should remain subtle and intentional. Avoid exaggerated movements or comedic actions.</p>
+          <div class="eyebrow" style="font-size:9px; color:var(--green); margin-bottom:10px;">Recommended Animations</div>
+          <ul style="font-size:11px; color:var(--text-muted); line-height:1.9; padding-left:16px;">
+            <li>Typing</li>
+            <li>Sketching</li>
+            <li>Reading</li>
+            <li>Writing</li>
+            <li>Drinking coffee</li>
+            <li>Walking calmly</li>
+            <li>Looking outside windows</li>
+            <li>Reviewing documents</li>
+            <li>Having quiet conversations</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Usage -->
+      <div class="card" style="margin-bottom:28px;">
+        <div class="eyebrow" style="color:var(--gold); margin-bottom:6px;">Usage</div>
+        <h3 class="interior-title" style="margin-bottom:12px;">Where the Collective Appears</h3>
+        <p style="font-size:12px; color:var(--text-muted); margin-bottom:18px; line-height:1.7;">Characters should support the brand rather than dominate it. The Collective may appear across all of the following touchpoints:</p>
+        <div class="category-pill-list">
+          <span class="category-pill">Website Illustrations</span>
+          <span class="category-pill">Mobile Applications</span>
+          <span class="category-pill">User Onboarding</span>
+          <span class="category-pill">Achievement Badges</span>
+          <span class="category-pill">Social Media Campaigns</span>
+          <span class="category-pill">Event Promotions</span>
+          <span class="category-pill">Workspace Posters</span>
+          <span class="category-pill">Merchandise</span>
+          <span class="category-pill">Sticker Packs</span>
+          <span class="category-pill">Presentations</span>
+          <span class="category-pill">Marketing Collateral</span>
+          <span class="category-pill">Physical Installations</span>
+          <span class="category-pill">Limited Edition Collectibles</span>
+        </div>
+      </div>
+
+      <!-- Character Expansion -->
+      <div class="card" style="margin-bottom:28px;">
+        <div class="eyebrow" style="color:var(--gold); margin-bottom:6px;">Character Expansion</div>
+        <h3 class="interior-title" style="margin-bottom:12px;">An Evolving Universe</h3>
+        <p style="font-size:12px; color:var(--text-muted); margin-bottom:18px; line-height:1.7;">New characters may be introduced whenever OFFEE expands into new industries, partnerships, services, or communities. Every new character must satisfy all of the following requirements:</p>
+        <div class="zone-row" style="padding:12px 0;">
+          <div class="zone-badge">01</div>
+          <div class="zone-info"><h4>Represent the Ecosystem</h4><p>The character must represent a real, recognisable member of the OFFEE community.</p></div>
+        </div>
+        <div class="zone-row" style="padding:12px 0;">
+          <div class="zone-badge">02</div>
+          <div class="zone-info"><h4>Follow the Voxel Language</h4><p>Must adhere to the established voxel design language and consistent proportions.</p></div>
+        </div>
+        <div class="zone-row" style="padding:12px 0;">
+          <div class="zone-badge">03</div>
+          <div class="zone-info"><h4>Use the Official Palette</h4><p>Exclusively uses OFFEE brand colours. No new saturated or off-palette tones.</p></div>
+        </div>
+        <div class="zone-row" style="padding:12px 0;">
+          <div class="zone-badge">04</div>
+          <div class="zone-info"><h4>Maintain Render Standards</h4><p>Shares the same photorealistic rendering style and material language as all existing characters.</p></div>
+        </div>
+        <div class="zone-row" style="padding:12px 0;">
+          <div class="zone-badge">05</div>
+          <div class="zone-info"><h4>Reflect Brand Values</h4><p>Embodies professionalism, craftsmanship, warmth, and focus in every design decision.</p></div>
+        </div>
+        <div class="zone-row" style="padding:12px 0; border-bottom:none;">
+          <div class="zone-badge">06</div>
+          <div class="zone-info"><h4>Maintain Visual Consistency</h4><p>The system should evolve naturally. No character should feel jarring or out of place alongside existing ones.</p></div>
+        </div>
+      </div>
+
+      <!-- DO / DON'T -->
+      <div class="grid-2" style="gap:24px; margin-bottom:28px;">
+        <div class="rules-card do">
+          <div class="rules-title"><span class="rule-icon">&#10003;</span> Character Directives (DO)</div>
+          <div class="rule-item"><span class="rule-icon">&#10003;</span><div>Maintain consistent proportions across every new character introduced.</div></div>
+          <div class="rule-item"><span class="rule-icon">&#10003;</span><div>Use the official OFFEE palette. Keep accent colours muted and earthy.</div></div>
+          <div class="rule-item"><span class="rule-icon">&#10003;</span><div>Keep expressions subtle &mdash; calm confidence over exaggerated emotion.</div></div>
+          <div class="rule-item"><span class="rule-icon">&#10003;</span><div>Focus on realism and craftsmanship. Use premium lighting always.</div></div>
+          <div class="rule-item"><span class="rule-icon">&#10003;</span><div>Design environments that feel warm, lived-in, and productive.</div></div>
+          <div class="rule-item"><span class="rule-icon">&#10003;</span><div>Make characters relatable and aspirational to real OFFEE community members.</div></div>
+        </div>
+        <div class="rules-card dont">
+          <div class="rules-title"><span class="rule-icon">&#10005;</span> Character Violations (DON&#39;T)</div>
+          <div class="rule-item"><span class="rule-icon">&#10005;</span><div>Create cartoon mascots or mimic LEGO&reg; / other recognisable toy brands.</div></div>
+          <div class="rule-item"><span class="rule-icon">&#10005;</span><div>Use oversized eyes, exaggerated expressions, or comedic action poses.</div></div>
+          <div class="rule-item"><span class="rule-icon">&#10005;</span><div>Introduce bright saturated colours outside the official palette.</div></div>
+          <div class="rule-item"><span class="rule-icon">&#10005;</span><div>Over-brand clothing or accessories with logos or luxury fashion references.</div></div>
+          <div class="rule-item"><span class="rule-icon">&#10005;</span><div>Create unrealistic action poses or sacrifice elegance for cuteness.</div></div>
+        </div>
+      </div>
+
+      <!-- Guiding Principle -->
+      <div class="principle-callout">
+        <p>The OFFEE Collective represents the people who make OFFEE what it is. Every character should feel like someone you could genuinely meet inside an OFFEE space &mdash; whether they are building a startup, designing a product, mentoring a founder, serving a coffee, hosting a workspace, or welcoming the community.</p>
+        <p>Together, they tell the story of a diverse ecosystem connected by one shared purpose.</p>
+        <strong>Building meaningful work, together.</strong>
+      </div>
+    </section>
+
 
   </main>
 
